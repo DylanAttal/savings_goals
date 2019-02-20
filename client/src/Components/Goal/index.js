@@ -5,8 +5,13 @@ export default class Goal extends Component {
   render() {
     return (
       <div className="goal">
-        <div className="goal-name">
-          <h3>Car Down Payment</h3>
+        <div className="goal-header">
+          <div className="delete-goal">
+            <p className="x">x</p>
+          </div>
+          <div className="name">
+            <h3>Car Down Payment</h3>
+          </div>
         </div>
         <div className="savings">
           <div className="target">
