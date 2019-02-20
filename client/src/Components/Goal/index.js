@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './style.css'
 
 export default class Goal extends Component {
   render() {
@@ -8,11 +9,14 @@ export default class Goal extends Component {
           <h3>Car Down Payment</h3>
         </div>
         <div className="savings">
-          <div className="target">$ 75 target</div>
-          <div className="saved">$ 40 saved</div>
-        </div>
-        <div className="add-money">
-          <button>Add Money</button>
+          <div className="target">
+            <p>$4,000 Target</p>
+            <button className="change-target">Change Target</button>
+          </div>
+          <div className="saved">
+            <p>$750 Saved</p>
+            <button className="add-savings">Add Savings</button>
+          </div>
         </div>
       </div>
     )

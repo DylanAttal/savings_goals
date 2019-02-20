@@ -18,7 +18,7 @@ export default class Landing extends Component {
         <section className="action">
           <div className="action-container">
             <div className="taglines">
-              <p className="tagline">Building Communities</p>
+              <p className="tagline">Build Your Future</p>
               <p className="sub-tagline">One deposit at a time</p>
             </div>
             <div className="call-to-action">
