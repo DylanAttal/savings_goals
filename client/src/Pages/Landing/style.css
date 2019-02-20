@@ -1,0 +1,135 @@
+.landing-header {
+  width: 100vw;
+  max-height: 75px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.landing-header-left {
+  justify-self: start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.landing-header-right {
+  justify-self: end;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 75px;
+  margin-left: 10px;
+}
+
+.login {
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #d22d4a;
+  background-color: #fff;
+  border: 2px solid #d22d4a;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.signup {
+  width: 300px;
+  height: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #d22d4a;
+  background-color: #fff;
+  border: 2px solid #d22d4a;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login:hover,
+.signup:hover {
+  color: #fff;
+  background-color: #d22d4a;
+}
+
+.action {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../images/community.jpg');
+  background-size: cover;
+}
+
+.action-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 60px;
+  font-weight: bold;
+  color: #dd3151;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.sub-tagline {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #dd3151;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.call-to-action {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.start-saving {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 700px) {
+  .login {
+    width: 100px;
+  }
+
+  .tagline {
+    font-size: 35px;
+  }
+
+  .sub-tagline {
+    font-size: 28px;
+  }
+
+  .call-to-action {
+    max-width: 300px;
+  }
+
+  .start-saving {
+    font-size: 20px;
+  }
+
+  .signup {
+    width: 200px;
+  }
+}
