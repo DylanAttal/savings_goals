@@ -34,27 +34,16 @@ export default class Savings extends Component {
           <button className="logout">Log Out</button>
         </header>
         <section className="goals">
-          <Goal
-            goalName="Car Down Payment"
-            targetAmount={4000}
-            savedAmount={3000}
-          />
-          <Goal
-            goalName="House Down Payment"
-            targetAmount={25000}
-            savedAmount={10000}
-          />
-          <Goal
-            goalName="Bahamas Vacation"
-            targetAmount={3000}
-            savedAmount={500}
-          />
-          <Goal goalName="Roadtrip" targetAmount={1000} savedAmount={200} />
-          <Goal
-            goalName="Christmas Gifts"
-            targetAmount={500}
-            savedAmount={450}
-          />
+          {this.state.goals.map((goal, index) => {
+            return (
+              <Goal
+                key={index}
+                goalName={goal.name}
+                targetAmount={goal.target}
+                savedAmount={goal.saved}
+              />
+            )
+          })}
         </section>
         <footer className="savings-footer">
           Thanks for saving at Acme Bank
