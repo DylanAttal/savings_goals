@@ -41,9 +41,11 @@ export default class Savings extends Component {
             return (
               <Goal
                 key={index}
+                id={goal.id}
                 goalName={goal.name}
                 targetAmount={goal.target}
                 savedAmount={goal.saved}
+                loadGoals={this.loadGoals}
               />
             )
           })}

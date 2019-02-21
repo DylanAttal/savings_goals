@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import './style.css'
 
 export default class Goal extends Component {
@@ -6,17 +7,30 @@ export default class Goal extends Component {
     super(props)
 
     this.state = {
+      id: this.props.id,
       goalName: this.props.goalName,
       targetAmount: this.props.targetAmount,
       savedAmount: this.props.savedAmount
     }
   }
+
+  _deleteGoal = (id, event) => {
+    axios.delete(`/goals/${id}`).then(response => {
+      this.props.loadGoals()
+    })
+  }
+
   render() {
     return (
       <div className="goal">
         <div className="goal-header">
           <div className="delete-goal">
-            <p className="x">x</p>
+            <p
+              onClick={this._deleteGoal.bind(this, this.state.id)}
+              className="x"
+            >
+              x
+            </p>
           </div>
           <div className="name">
             <h3>{this.state.goalName}</h3>
