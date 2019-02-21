@@ -30,8 +30,11 @@ export default class Savings extends Component {
     return (
       <div>
         <header className="savings-header">
-          <p>My Savings Goals</p>
-          <button className="logout">Log Out</button>
+          <p>My Goals</p>
+          <div className="buttons">
+            <button className="add-goal">New Goal</button>
+            <button className="logout">Log Out</button>
+          </div>
         </header>
         <section className="goals">
           {this.state.goals.map((goal, index) => {

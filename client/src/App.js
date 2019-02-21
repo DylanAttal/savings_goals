@@ -4,6 +4,7 @@ import './App.css'
 
 import Landing from './Pages/Landing'
 import Savings from './Pages/Savings'
+import CreateGoal from './Pages/CreateGoal'
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <Switch>
           <Route path="/" exact component={Landing} />
           <Route path="/savings" exact component={Savings} />
+          <Route path="/create-goal" exact component={CreateGoal} />
         </Switch>
       </Router>
     )
