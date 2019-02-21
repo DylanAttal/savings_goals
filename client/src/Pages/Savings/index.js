@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 import './style.css'
 
@@ -7,6 +8,22 @@ import Goal from '../../Components/Goal'
 export default class Savings extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      goals: []
+    }
+  }
+
+  componentDidMount = () => {
+    this.loadGoals()
+  }
+
+  loadGoals = () => {
+    axios.get('/goals').then(response => {
+      this.setState({
+        goals: response.data
+      })
+    })
   }
 
   render() {
