@@ -1,7 +1,30 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import './style.css'
 
 export default class CreateGoal extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      goals: []
+    }
+  }
+
+  _submit = event => {
+    event.preventDefault()
+
+    const form = event.target
+    const formData = new FormData(form)
+    console.log(formData)
+
+    axios.post('/goals', formData).then(response => {
+      this.setState({
+        goals: response.data
+      })
+    })
+  }
+
   render() {
     return (
       <div>
@@ -11,12 +34,13 @@ export default class CreateGoal extends Component {
         </header>
         <div className="create-new-goal">
           <h1>Create a new savings goal</h1>
-          <form>
+          <form onSubmit={this._submit}>
             <div className="goal">
               <div className="goal-header">
                 <div className="name">
                   <h3 className="new-name">
                     <input
+                      name="goal[name]"
                       className="new-goal-name"
                       type="text"
                       placeholder="New Goal Name"
@@ -27,15 +51,16 @@ export default class CreateGoal extends Component {
               <div className="savings">
                 <div className="new-target">
                   <p>
-                    <input type="number" placeholder="0" />
+                    <input name="goal[target]" type="number" placeholder="0" />
                   </p>
                   <p className="target-amount">Target Amount</p>
                 </div>
                 <div className="new-saved">
                   <p>
-                    <input type="number" placeholder="0" />
+                    <input name="goal[saved]" type="number" placeholder="0" />
                   </p>
                   <p className="saved-amount">Saved Amount</p>
+                  <input name="goal[user_id]" value={1} type="hidden" />
                 </div>
               </div>
               <div className="submit-info">
