@@ -92,3 +92,23 @@
   color: #fff;
   background-color: #d22d4a;
 }
+
+.changing-target,
+.adding-savings {
+  width: 75px;
+  margin: 19px 0px 19px 20px;
+  background: #f1f1f1;
+  border: none;
+  font-size: 20px;
+  text-align: center;
+}
+
+.changing-target:focus,
+.adding-savings:focus {
+  background-color: #fff;
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}

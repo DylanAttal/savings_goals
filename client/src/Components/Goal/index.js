@@ -10,13 +10,63 @@ export default class Goal extends Component {
       id: this.props.id,
       goalName: this.props.goalName,
       targetAmount: this.props.targetAmount,
-      savedAmount: this.props.savedAmount
+      savedAmount: this.props.savedAmount,
+      isChanging: false,
+      isAdding: false
     }
   }
 
   _deleteGoal = (id, event) => {
     axios.delete(`/goals/${id}`).then(response => {
       this.props.loadGoals()
+    })
+  }
+
+  _changeTarget = event => {
+    this.setState({
+      isChanging: true
+    })
+  }
+
+  _addSavings = event => {
+    this.setState({
+      isAdding: true
+    })
+  }
+
+  _submitNewTarget = event => {
+    event.preventDefault()
+
+    const form = event.target
+    console.log(form)
+    const formData = new FormData(form)
+
+    axios.put(`/goals/${this.state.id}`, formData).then(response => {
+      this.setState({
+        targetAmount: response.data.target
+      })
+    })
+
+    this.setState({
+      isChanging: false
+    })
+  }
+
+  _submitNewSavings = event => {
+    event.preventDefault()
+
+    const form = event.target
+
+    const formData = new FormData(form)
+
+    axios.put(`/goals/${this.state.id}`, formData).then(response => {
+      this.setState({
+        savedAmount: response.data.saved
+      })
+    })
+
+    this.setState({
+      isAdding: false
     })
   }
 
@@ -38,12 +88,38 @@ export default class Goal extends Component {
         </div>
         <div className="savings">
           <div className="target">
-            <p>${this.state.targetAmount} Target</p>
-            <button className="change-target">Change Target</button>
+            <p className={this.state.isChanging ? 'hidden' : ''}>
+              ${this.state.targetAmount} Target
+            </p>
+            <form onSubmit={this._submitNewTarget}>
+              <input
+                name="goal[target]"
+                type="number"
+                className={this.state.isChanging ? 'changing-target' : 'hidden'}
+              />
+              <input name="goal[id]" value={this.state.id} type="hidden" />
+              <input name="goal[user_id]" value={1} type="hidden" />
+            </form>
+            <button className="change-target" onClick={this._changeTarget}>
+              Change Target
+            </button>
           </div>
           <div className="saved">
-            <p>${this.state.savedAmount} Saved</p>
-            <button className="add-savings">Add Savings</button>
+            <p className={this.state.isAdding ? 'hidden' : ''}>
+              ${this.state.savedAmount} Saved
+            </p>
+            <form onSubmit={this._submitNewSavings}>
+              <input
+                name="goal[saved]"
+                type="number"
+                className={this.state.isAdding ? 'adding-savings' : 'hidden'}
+              />
+              <input name="goal[id]" value={this.state.id} type="hidden" />
+              <input name="goal[user_id]" value={1} type="hidden" />
+            </form>
+            <button className="add-savings" onClick={this._addSavings}>
+              Add Savings
+            </button>
           </div>
         </div>
       </div>

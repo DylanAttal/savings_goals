@@ -15,8 +15,8 @@ export default class CreateGoal extends Component {
     event.preventDefault()
 
     const form = event.target
+
     const formData = new FormData(form)
-    console.log(formData)
 
     axios.post('/goals', formData).then(response => {
       this.setState({
