@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './style.css'
 
 import acmeLogo from '../../images/acme-bank-logo.png'
@@ -12,7 +13,9 @@ export default class Landing extends Component {
             <img src={acmeLogo} className="logo" alt="Logo of Bank OZK." />
           </div>
           <div className="landing-header-right">
-            <button className="login">Login</button>
+            <Link to="/login">
+              <button className="login">Login</button>
+            </Link>
           </div>
         </header>
         <section className="action">
@@ -23,7 +26,9 @@ export default class Landing extends Component {
             </div>
             <div className="call-to-action">
               <p className="start-saving">Start Saving Now</p>
-              <button className="signup">Sign Up</button>
+              <Link to="/login">
+                <button className="signup">Sign Up</button>
+              </Link>
             </div>
           </div>
         </section>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import history from '../../../src/history'
 
 import './style.css'
 
@@ -21,9 +22,12 @@ export default class CreateGoal extends Component {
     const formData = new FormData(form)
 
     axios.post('/goals', formData).then(response => {
-      this.setState({
-        goals: response.data
-      })
+      this.setState(
+        {
+          goals: response.data
+        },
+        history.push('/savings')
+      )
     })
   }
 
@@ -32,7 +36,9 @@ export default class CreateGoal extends Component {
       <div>
         <header className="savings-header">
           <p>New Goal</p>
-          <button className="logout">Log Out</button>
+          <Link to="/logout">
+            <button className="logout">Log Out</button>
+          </Link>
         </header>
         <div className="create-new-goal">
           <h1>Create a new savings goal</h1>
@@ -62,7 +68,7 @@ export default class CreateGoal extends Component {
                     <input name="goal[saved]" type="number" placeholder="0" />
                   </p>
                   <p className="saved-amount">Saved Amount</p>
-                  <input name="goal[user_id]" value={1} type="hidden" />
+                  {/* <input name="goal[user_id]" value={1} type="hidden" /> */}
                 </div>
               </div>
               <div className="submit-info">

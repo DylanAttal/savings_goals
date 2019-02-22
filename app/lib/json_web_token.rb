@@ -1,5 +1,6 @@
 require "net/http"
 require "uri"
+
 class JSONWebToken
   def self.verify(token)
     JWT.decode(token, nil,

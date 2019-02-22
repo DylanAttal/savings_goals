@@ -20,9 +20,9 @@ export default class Savings extends Component {
   }
 
   loadGoals = () => {
-    axios.get('/goals').then(response => {
+    axios.get('/users/current').then(response => {
       this.setState({
-        goals: response.data
+        goals: response.data.goals
       })
     })
   }
@@ -36,7 +36,9 @@ export default class Savings extends Component {
             <Link to="/create-goal">
               <button className="add-goal">New Goal</button>
             </Link>
-            <button className="logout">Log Out</button>
+            <Link to="/logout">
+              <button className="logout">Log Out</button>
+            </Link>
           </div>
         </header>
         <section className="goals">

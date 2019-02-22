@@ -39,7 +39,8 @@ class Auth {
         if (callback) {
           callback()
         }
-        history.replace('/')
+        // Sends user to savings page if they log in successfully
+        history.replace('/savings')
       } else if (err) {
         history.replace('/')
         console.log(err)
