@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 import './style.css'
 
@@ -32,7 +33,9 @@ export default class Savings extends Component {
         <header className="savings-header">
           <p>My Goals</p>
           <div className="buttons">
-            <button className="add-goal">New Goal</button>
+            <Link to="/create-goal">
+              <button className="add-goal">New Goal</button>
+            </Link>
             <button className="logout">Log Out</button>
           </div>
         </header>

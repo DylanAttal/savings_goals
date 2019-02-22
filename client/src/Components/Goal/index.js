@@ -38,7 +38,7 @@ export default class Goal extends Component {
     event.preventDefault()
 
     const form = event.target
-    console.log(form)
+
     const formData = new FormData(form)
 
     axios.put(`/goals/${this.state.id}`, formData).then(response => {
