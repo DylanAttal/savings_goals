@@ -67,3 +67,7 @@ input[type='number']:focus {
   color: #fff;
   background-color: #d22d4a;
 }
+
+.submit-goal:focus {
+  outline: none;
+}

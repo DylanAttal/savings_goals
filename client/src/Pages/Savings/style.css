@@ -50,6 +50,11 @@
   background-color: #af233c;
 }
 
+.add-goal:focus,
+.logout:focus {
+  outline: none;
+}
+
 .savings-footer {
   position: fixed;
   bottom: 0;
