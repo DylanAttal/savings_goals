@@ -52,6 +52,7 @@ export default class CreateGoal extends Component {
                       className="new-goal-name"
                       type="text"
                       placeholder="New Goal Name"
+                      autoComplete="off"
                     />
                   </h3>
                 </div>
@@ -59,13 +60,23 @@ export default class CreateGoal extends Component {
               <div className="savings">
                 <div className="new-target">
                   <p>
-                    <input name="goal[target]" type="number" placeholder="0" />
+                    <input
+                      name="goal[target]"
+                      type="number"
+                      placeholder="0"
+                      autoComplete="off"
+                    />
                   </p>
                   <p className="target-amount">Target Amount</p>
                 </div>
                 <div className="new-saved">
                   <p>
-                    <input name="goal[saved]" type="number" placeholder="0" />
+                    <input
+                      name="goal[saved]"
+                      type="number"
+                      placeholder="0"
+                      autoComplete="off"
+                    />
                   </p>
                   <p className="saved-amount">Saved Amount</p>
                   {/* <input name="goal[user_id]" value={1} type="hidden" /> */}

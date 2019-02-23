@@ -52,9 +52,10 @@ export default class Goal extends Component {
 
   _submitNewSavings = event => {
     event.preventDefault()
-    // console.log(parseInt(event.target.saved.value) + this.state.savedAmount)
+
     this.refs.saved.value =
       parseInt(this.refs.saved.value) + this.state.savedAmount
+
     const form = event.target
 
     const formData = new FormData(form)
@@ -93,6 +94,7 @@ export default class Goal extends Component {
                 name="goal[target]"
                 type="number"
                 placeholder=""
+                autoComplete="off"
                 className={this.state.isChanging ? 'changing-target' : 'hidden'}
               />
               <input name="goal[id]" value={this.state.id} type="hidden" />
@@ -111,6 +113,7 @@ export default class Goal extends Component {
                 ref="saved"
                 type="number"
                 placeholder=""
+                autoComplete="off"
                 className={this.state.isAdding ? 'adding-savings' : 'hidden'}
               />
               <input name="goal[id]" value={this.state.id} type="hidden" />

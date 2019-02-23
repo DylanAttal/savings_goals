@@ -93,6 +93,11 @@
   background-color: #d22d4a;
 }
 
+.change-target:focus,
+.add-savings:focus {
+  outline: none;
+}
+
 .changing-target,
 .adding-savings {
   width: 75px;
