@@ -3,6 +3,7 @@
   max-height: 75px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-color: #f8f8f8;
 }
 
 .landing-header-left {
@@ -24,6 +25,7 @@
   height: auto;
   max-height: 75px;
   margin-left: 10px;
+  background-color: #e0e0e0;
 }
 
 .login {
@@ -98,8 +100,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
-  border: 1px solid #000;
+  background-color: #f8f8f8;
+  border: 1px solid #e0e0e0;
   border-radius: 4px;
 }
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './style.css'
 
-import acmeLogo from '../../images/acme-bank-logo.png'
+import acmeLogo from '../../images/acme-bank-logo-light-grey.png'
 
 export default class Landing extends Component {
   render() {
