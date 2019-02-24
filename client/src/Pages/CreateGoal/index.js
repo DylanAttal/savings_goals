@@ -41,7 +41,7 @@ export default class CreateGoal extends Component {
           </Link>
         </header>
         <div className="create-new-goal">
-          <h1>Create a new savings goal</h1>
+          <h2>Create a new savings goal</h2>
           <form onSubmit={this._submit}>
             <div className="goal">
               <div className="goal-header">
@@ -79,7 +79,6 @@ export default class CreateGoal extends Component {
                     />
                   </p>
                   <p className="saved-amount">Saved Amount</p>
-                  {/* <input name="goal[user_id]" value={1} type="hidden" /> */}
                 </div>
               </div>
               <div className="submit-info">

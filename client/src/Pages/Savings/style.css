@@ -15,21 +15,7 @@
   margin: 0;
 }
 
-.add-goal {
-  width: 200px;
-  height: 40px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #d22d4a;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
+.add-goal,
 .logout {
   width: 200px;
   height: 40px;
@@ -89,8 +75,8 @@
 
   .add-goal,
   .logout {
-    width: 80px;
+    width: 85px;
     height: 30px;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
